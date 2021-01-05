@@ -32,6 +32,7 @@ function App() {
     })
     event.target.value = ""
     const todo = await response.json()
+    
     setTodos((todos) => [...todos,todo])
   }
 
@@ -52,21 +53,22 @@ function App() {
       return [...todos.slice(0, indexTodo), updatedTodo, ...todos.slice(indexTodo+1)]
     } )
   }
-
   return (
     <div className="App">
       <header className="App-header">Todos</header>
       <section>
         <div>
           <input
+            aria-label="add input"
+            className="TodoInput"
             placeholder="What needs to be done?"
             onKeyDown={ e => handleNewTodoKeyDown(e) }
           />
         </div>
         <div>
-          <ul>
+          <ul className="Todos">
             {
-              todos.map((todo)=> <li key={todo.id} onClick={() => markComplete(todo)}>{todo.title}</li>)
+              todos.map((todo)=> <li className={todo.completed? "completed": ""} key={todo.id} onClick={() => markComplete(todo)}>{todo.title}</li>)
             }
           </ul>
         </div>

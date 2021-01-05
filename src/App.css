@@ -1,0 +1,33 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-header{
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+.TodoInput{
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+.Todos{
+  margin-top: 30px;
+  padding-inline-start: 0px;
+}
+
+.Todos li{
+  font-size: 20px;
+  padding: 5px;
+  list-style-type: none;
+  cursor: pointer;
+  margin-left:5px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: red;
+}
+
+.Todos li.completed{
+  border-left-color: green;
+}
