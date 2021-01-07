@@ -11,9 +11,6 @@ const db = factory({
   }
 })
 
-db.todos.create({
-  title: 'go to work'
-})
 
 const worker = setupWorker(...db.todos.toHandlers(process.env.REACT_APP_API))
 
